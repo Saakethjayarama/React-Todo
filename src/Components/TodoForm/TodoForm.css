@@ -1,0 +1,9 @@
+.TodoForm__title {
+  padding: 10px;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.TodoForm__form {
+  padding: 5px 40px;
+}
