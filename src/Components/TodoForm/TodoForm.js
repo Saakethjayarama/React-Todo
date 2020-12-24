@@ -1,6 +1,7 @@
 import React from "react";
-import { Form, Jumbotron, Button } from "react-bootstrap";
 import "./TodoForm.css";
+// bootstrap
+import { Form, Button } from "react-bootstrap";
 
 function TodoForm() {
   return (

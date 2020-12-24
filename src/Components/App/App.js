@@ -1,7 +1,9 @@
 import Header from "../Header";
 import "./App.css";
 import * as R from "react-bootstrap";
+import { Alert, Button } from "react-bootstrap";
 import TodoForm from "../TodoForm";
+import Todo from "../Todo/Todo";
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
       <R.Container fluid>
         <R.Row>
           <R.Col md={6} className="App__Todos">
-            Todos goes here
+            <h4>Todos</h4>
+            <Todo />
           </R.Col>
           <R.Col md={6} className="App__TodoForm">
             <TodoForm />
