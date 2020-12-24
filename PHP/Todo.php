@@ -54,6 +54,16 @@
       $this->addedAt = $addedAt;
     }
 
+    function toArray() {
+      return array(
+        "id" => $this->id,
+        "title" => $this->title,
+        "description" => $this->description,
+        "status" => $this->status,
+        "addedAt" => $this->addedAt
+      );
+    }
+
   }
 
 ?>
