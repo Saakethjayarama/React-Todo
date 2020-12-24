@@ -1,9 +1,3 @@
 .App__Todos {
-  padding-top: 50px;
-}
-
-.App__fab {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+  padding-top: 30px;
 }

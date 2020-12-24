@@ -6,7 +6,6 @@ import "./Todo.css";
 import Fab from "@material-ui/core/Fab";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import DoneIcon from "@material-ui/icons/Done";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => {
@@ -21,23 +20,35 @@ const useStyles = makeStyles((theme) => {
     },
   };
 });
-function Todo() {
+function Todo(props) {
   const classes = useStyles();
+  const { editTodo, value, deleteTodo } = props;
 
   return (
     <Alert variant="success">
-      <Alert.Heading>Hey, nice to see you</Alert.Heading>
-      <p>Aww yeah, you successfully read this important alert message.</p>
+      <Alert.Heading>{value.title}</Alert.Heading>
+      <p>{value.description}</p>
       <hr />
       <div className="d-flex justify-content-end">
         <div className={classes.root}>
-          <Fab color="primary" aria-label="add" size="small">
-            <DoneIcon />
-          </Fab>
-          <Fab color="secondary" aria-label="edit" size="small">
+          <Fab
+            color="primary"
+            aria-label="edit"
+            size="small"
+            onClick={() => {
+              editTodo(value);
+            }}
+          >
             <EditIcon />
           </Fab>
-          <Fab color="secondary" aria-label="edit" size="small">
+          <Fab
+            color="secondary"
+            aria-label="edit"
+            size="small"
+            onClick={() => {
+              deleteTodo(value.id);
+            }}
+          >
             <DeleteForeverIcon />
           </Fab>
         </div>

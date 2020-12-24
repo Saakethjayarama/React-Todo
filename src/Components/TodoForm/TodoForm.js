@@ -4,9 +4,7 @@ import "./TodoForm.css";
 import { Form, Button } from "react-bootstrap";
 
 function TodoForm(props) {
-  const state = props.state;
-  const handleChange = props.handleChange;
-  const handleSubmit = props.handleSubmit;
+  const { state, handleChange, handleSubmit, clear } = props;
 
   return (
     <div className="TodoForm">
@@ -32,15 +30,7 @@ function TodoForm(props) {
               value={state.description}
             />
           </Form.Group>
-          <Form.Group controlId="dt">
-            <Form.Label>Date and Time</Form.Label>
-            <Form.Control
-              type="datetime-local"
-              name="dateTime"
-              onChange={handleChange}
-              value={state.dateTime}
-            />
-          </Form.Group>
+
           <Button
             variant="primary"
             type="submit"
@@ -48,6 +38,13 @@ function TodoForm(props) {
             style={{ marginLeft: "10px" }}
           >
             Submit
+          </Button>
+          <Button
+            variant="danger"
+            className="float-right"
+            onClick={() => clear()}
+          >
+            Clear
           </Button>
         </Form>
       </div>
