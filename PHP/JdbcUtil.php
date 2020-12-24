@@ -7,7 +7,7 @@
         
         $userName = "root";
         $password = "";
-        $dbName = "hospital";
+        $dbName = "todo";
 
         
         $connection = mysqli_connect($host, $userName, $password, $dbName);
