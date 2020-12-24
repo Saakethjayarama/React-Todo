@@ -66,6 +66,17 @@
       $connection->close();
     }
 
+    function changeStatus($id, $status) {
+      $connection = JdbcUtil::getConnection();
+      $sql = "update todos set status = ? where id = ?";
+
+      $statement = $connection->prepare($sql);
+      $statement->bind_param('ii', $id, $status);
+      $statement->execute();
+
+      $connection->close();
+    }
+
   }
 
 ?>
