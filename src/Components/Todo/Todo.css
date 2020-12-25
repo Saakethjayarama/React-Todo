@@ -1,0 +1,11 @@
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  width: 125px;
+  justify-content: space-evenly;
+}

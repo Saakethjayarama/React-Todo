@@ -71,7 +71,7 @@
       $sql = "update todos set status = ? where id = ?";
 
       $statement = $connection->prepare($sql);
-      $statement->bind_param('ii', $id, $status);
+      $statement->bind_param('ii', $status, $id);
       $statement->execute();
 
       $connection->close();
